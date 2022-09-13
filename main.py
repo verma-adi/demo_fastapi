@@ -18,10 +18,10 @@ async def root():
 
 
 @app.get('/item_id')
-async def read_paramteres(item_id: str, q: Union[str, None] = None):
+async def read_paramteres(item_id: str, q: Union[str, None] = None, short: bool = False):
     if q:
         return {"item_id": item_id, "q": q}
-    return {"item_id": item_id}
+    return {"item_id": item_id, "short": short}
 
 
 @app.get('/items/')
